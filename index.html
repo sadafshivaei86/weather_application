@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Weather Explorer | Modern Weather Insights</title>
+    <meta name="description" content="Discover weather and facts for any country with our sleek, glassmorphic explorer tool.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>Country Weather <span>Explorer</span></h1>
+            <p>Select a country to explore its current weather and vital statistics.</p>
+        </header>
+
+        <section class="search-section">
+            <div class="select-wrapper">
+                <select id="country-select" disabled>
+                    <option value="">Loading countries...</option>
+                </select>
+                <div class="select-arrow"></div>
+            </div>
+        </section>
+
+        <section id="results-section" class="results-grid hidden">
+            <!-- Country Info Card -->
+            <div class="card country-card glass">
+                <div class="card-header">
+                    <img id="country-flag" src="" alt="Flag">
+                    <div class="header-text">
+                        <h2 id="country-name">Country Name</h2>
+                        <p id="country-capital">Capital City</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="stat-item">
+                        <span class="label">Population</span>
+                        <span id="country-population" class="value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Region</span>
+                        <span id="country-region" class="value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Currency</span>
+                        <span id="country-currency" class="value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Languages</span>
+                        <span id="country-languages" class="value">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather Card -->
+            <div class="card weather-card glass">
+                <div class="card-header">
+                    <div class="weather-icon-container">
+                        <div id="weather-icon" class="weather-icon"></div>
+                    </div>
+                    <div class="header-text">
+                        <h2>Current Weather</h2>
+                        <p id="weather-condition">Loading...</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="temp-display">
+                        <span id="temperature" class="temp-value">-</span>
+                        <span class="unit">°C</span>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="label">Wind Speed</span>
+                            <span id="wind-speed" class="value">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Condition</span>
+                            <span id="weather-desc" class="value">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="loading" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Fetching data...</p>
+        </div>
+
+        <div id="error-message" class="error-toast hidden">
+            <p>Oops! Something went wrong. Please try again.</p>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
